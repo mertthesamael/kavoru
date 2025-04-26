@@ -1,12 +1,7 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Nunito, Quicksand } from "next/font/google";
+import { Quicksand } from "next/font/google";
 import "./globals.css";
 
-
-const nunito = Nunito({
-  variable: "--font-nunito",
-  subsets: ["latin"],
-});
 
 const quicksand = Quicksand({
   variable: "--font-quicksand",

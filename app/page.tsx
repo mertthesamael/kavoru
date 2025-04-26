@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import {
@@ -7,7 +6,6 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { cn } from "@/lib/utils";
 
 export default function Home() {
   return (
@@ -93,11 +91,11 @@ export default function Home() {
       <div className="max-w-2xl mx-auto text-center">
         <h2 className="text-3xl font-bold text-violet-700 mb-6">About Kavoru</h2>
         <p className="text-gray-700 text-lg mb-6 leading-relaxed">
-          We believe emotions aren't problems to fix — they are journeys to understand.
+          We believe emotions aren&apos;t problems to fix — they are journeys to understand.
           Kavoru offers a gentle mirror, helping you reflect, accept, and move forward.
         </p>
         <div className="p-6 bg-white rounded-2xl shadow-sm inline-block">
-          <p className="text-violet-600 italic">"Feel tomorrow, today."</p>
+          <p className="text-violet-600 italic">&quot;Feel tomorrow, today.&quot;</p>
         </div>
       </div>
     </section>
