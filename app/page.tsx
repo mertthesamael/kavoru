@@ -1,103 +1,131 @@
 import Image from "next/image";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { cn } from "@/lib/utils";
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+   <>
+  <div className="min-h-screen bg-neutral-50">
+    <header className="flex justify-between items-center px-8 py-6">
+      <h1 className="text-2xl font-bold text-violet-700">Kavoru</h1>
+      <nav className="hidden md:flex gap-6 text-gray-600 font-medium">
+        <a href="#features" className="hover:text-violet-600 transition-colors">Features</a>
+        <a href="#about" className="hover:text-violet-600 transition-colors">About</a>
+        <a href="#early" className="hover:text-violet-600 transition-colors">Get Early Access</a>
+      </nav>
+    </header>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <section className="flex flex-col items-center text-center px-6 pt-16 pb-20">
+      <div className="absolute top-0 right-0 w-64 h-64 bg-purple-50 rounded-full filter blur-3xl opacity-20 -z-10 transform translate-x-1/4 -translate-y-1/4"></div>
+      <div className="absolute top-32 left-0 w-72 h-72 bg-indigo-50 rounded-full filter blur-3xl opacity-20 -z-10 transform -translate-x-1/4"></div>
+      
+      <h2 className="text-4xl md:text-5xl font-bold mb-4 leading-tight">
+        Understand Your Feelings. <br />
+        <span className="bg-gradient-to-r from-indigo-600 via-violet-600 to-purple-600 inline-block text-transparent bg-clip-text">Feel Tomorrow.</span>
+      </h2>
+      <p className="text-gray-600 max-w-xl mt-6 mb-10 text-lg">
+        Kavoru helps you track emotions and predict your future moods with kindness and insight.
+      </p>
+      <Button 
+        asChild 
+        size="lg" 
+        className="bg-gradient-to-r from-violet-600 to-indigo-600 hover:from-violet-700 hover:to-indigo-700 text-white py-3 px-8 rounded-full text-lg font-semibold shadow-sm"
+      >
+        <a href="#early">Join the Waitlist</a>
+      </Button>
+    </section>
+
+    <section id="features" className="px-6 py-20">
+      <h2 className="text-3xl font-bold text-center text-gray-800 mb-12">How Kavoru Helps</h2>
+      <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <Card className="border-none bg-white shadow-sm rounded-3xl hover:shadow-md transition-shadow overflow-hidden group">
+          <div className="h-1 bg-gradient-to-r from-violet-400 to-purple-400 w-full"></div>
+          <CardHeader className="pb-2 pt-6">
+            <CardTitle className="text-2xl font-bold text-gray-800 flex items-center gap-2">
+              <span className="bg-violet-50 p-2 rounded-full">💫</span> Daily Journaling
+            </CardTitle>
+          </CardHeader>
+          <CardContent>
+            <p className="text-gray-600">
+              Log your feelings easily every day with gentle prompts.
+            </p>
+          </CardContent>
+        </Card>
+
+        <Card className="border-none bg-white shadow-sm rounded-3xl hover:shadow-md transition-shadow overflow-hidden group">
+          <div className="h-1 bg-gradient-to-r from-indigo-400 to-blue-400 w-full"></div>
+          <CardHeader className="pb-2 pt-6">
+            <CardTitle className="text-2xl font-bold text-gray-800 flex items-center gap-2">
+              <span className="bg-indigo-50 p-2 rounded-full">🌿</span> Gentle Predictions
+            </CardTitle>
+          </CardHeader>
+          <CardContent>
+            <p className="text-gray-600">
+              Thoughtful forecasts based on your emotional patterns.
+            </p>
+          </CardContent>
+        </Card>
+
+        <Card className="border-none bg-white shadow-sm rounded-3xl hover:shadow-md transition-shadow overflow-hidden group">
+          <div className="h-1 bg-gradient-to-r from-purple-400 to-violet-400 w-full"></div>
+          <CardHeader className="pb-2 pt-6">
+            <CardTitle className="text-2xl font-bold text-gray-800 flex items-center gap-2">
+              <span className="bg-purple-50 p-2 rounded-full">✨</span> Personal Insights
+            </CardTitle>
+          </CardHeader>
+          <CardContent>
+            <p className="text-gray-600">
+              Understand how your moods shift and flow over time.
+            </p>
+          </CardContent>
+        </Card>
+      </div>
+    </section>
+
+    <section id="about" className="px-6 py-20 bg-gradient-to-b from-neutral-50 to-neutral-100">
+      <div className="max-w-2xl mx-auto text-center">
+        <h2 className="text-3xl font-bold text-violet-700 mb-6">About Kavoru</h2>
+        <p className="text-gray-700 text-lg mb-6 leading-relaxed">
+          We believe emotions aren't problems to fix — they are journeys to understand.
+          Kavoru offers a gentle mirror, helping you reflect, accept, and move forward.
+        </p>
+        <div className="p-6 bg-white rounded-2xl shadow-sm inline-block">
+          <p className="text-violet-600 italic">"Feel tomorrow, today."</p>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
+      </div>
+    </section>
+
+    <section id="early" className="bg-gradient-to-br from-neutral-50 to-indigo-50/30 py-16 px-6 text-center relative overflow-hidden">
+      <div className="absolute bottom-0 right-0 w-80 h-80 bg-violet-50 rounded-full filter blur-3xl opacity-30 -z-10 transform translate-x-1/4 translate-y-1/4"></div>
+      
+      <h2 className="text-2xl md:text-3xl font-bold text-gray-800 mb-6">Get Early Access</h2>
+      <p className="text-gray-600 mb-8 max-w-xl mx-auto">Be among the first to experience Kavoru. A small circle of early users will shape our future together.</p>
+      <form className="flex flex-col sm:flex-row gap-4 justify-center items-center max-w-md mx-auto">
+        <Input 
+          type="email" 
+          placeholder="Your email" 
+          className="px-5 py-3 h-12 rounded-full border-2 border-violet-100 focus-visible:ring-violet-200 bg-white"
+        />
+        <Button 
+          type="submit" 
+          size="lg"
+          className="bg-gradient-to-r from-violet-600 to-indigo-600 hover:from-violet-700 hover:to-indigo-700 text-white rounded-full h-12 shadow-sm"
         >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+          Join Now
+        </Button>
+      </form>
+    </section>
+    <footer className="text-center text-gray-500 text-sm py-8 border-t border-gray-200">
+      © 2025 Kavoru. All rights reserved.
+    </footer>
+  </div>
+   </>
   );
 }
